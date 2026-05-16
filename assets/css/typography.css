@@ -1,6 +1,21 @@
 :root {
   /* Fonts */
-  --font-sans: "Arial";
+  --font-regular:
+    SatoshiRegular, Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    sans-serif;
+  --font-italic:
+    SatoshiItalic, Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    sans-serif;
+  --font-light-italic:
+    SatoshiLightItalic, Avenir, Montserrat, Corbel, "URW Gothic",
+    source-sans-pro, sans-serif;
+  --font-bold:
+    SatoshiBold, Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    sans-serif;
+  --font-bold-italic:
+    SatoshiBoldItalic, Avenir, Montserrat, Corbel, "URW Gothic",
+    source-sans-pro, sans-serif;
+  --font-cond-bold: ExposeBold, "Times New Roman", serif;
 
   /* Font Sizes (modular scale) */
   --font-xs: 0.5rem; /* 8px */
@@ -28,6 +43,75 @@
 }
 
 /* =========================
+   FONTS
+========================= */
+@font-face {
+  font-family: "SatoshiRegular";
+  src:
+    url("../fonts/satoshi/Satoshi-Regular.woff2") format("woff2"),
+    url("../fonts/satoshi/Satoshi-Regular.woff") format("woff"),
+    url("../fonts/satoshi/Satoshi-Regular.eot") format("eot");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SatoshiItalic";
+  src:
+    url("../fonts/satoshi/Satoshi-Italic.woff2") format("woff2"),
+    url("../fonts/satoshi/Satoshi-Italic.woff") format("woff"),
+    url("../fonts/satoshi/Satoshi-Italic.eot") format("eot");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "SatoshiBold";
+  src:
+    url("../fonts/satoshi/Satoshi-Bold.woff2") format("woff2"),
+    url("../fonts/satoshi/Satoshi-Bold.woff") format("woff"),
+    url("../fonts/satoshi/Satoshi-Bold.eot") format("eot");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SatoshiBoldItalic";
+  src:
+    url("../fonts/satoshi/Satoshi-BoldItalic.woff2") format("woff2"),
+    url("../fonts/satoshi/Satoshi-BoldItalic.woff") format("woff"),
+    url("../fonts/satoshi/Satoshi-BoldItalic.eot") format("eot");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SatoshiLightItalic";
+  src:
+    url("../fonts/satoshi/Satoshi-LightItalic.woff2") format("woff2"),
+    url("../fonts/satoshi/Satoshi-LightItalic.woff") format("woff"),
+    url("../fonts/satoshi/Satoshi-LightItalic.eot") format("eot");
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ExposeBold";
+  src:
+    url("../fonts/expose/Expose-Bold.woff2") format("woff2"),
+    url("../fonts/expose/Expose-Bold.woff") format("woff"),
+    url("../fonts/expose/Expose-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* =========================
    BASE STYLES
 ========================= */
 
@@ -36,7 +120,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-regular);
   line-height: 1.5;
   color: var(--color-text);
 }
@@ -50,8 +134,7 @@ body {
   h2,
   h3,
   h4 {
-    font-family: var(--font-sans);
-    font-weight: 600;
+    font-family: var(--font-cond-bold);
   }
 
   h1 {
@@ -84,11 +167,11 @@ body {
   }
 
   strong {
-    font-weight: 600;
+    font-family: var(--font-bold);
   }
 
   em {
-    font-style: italic;
+    font-family: var(--font-italic);
   }
 
   /* =========================
@@ -120,7 +203,11 @@ body {
     padding-left: var(--space-m);
     margin: var(--space-xl) 0;
     color: var(--color-muted);
-    font-style: italic;
+    font-family: var(--font-light-italic);
+
+    strong {
+      font-family: var(--font-bold-italic);
+    }
   }
 
   blockquote p {
@@ -177,7 +264,8 @@ body {
   }
 
   ol li::marker {
-    font-weight: 700;
+    font-family: var(--font-bold);
+    color: var(--color-accent);
   }
 }
 

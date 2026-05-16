@@ -17,6 +17,8 @@
 
   a {
     color: var(--color-accent);
+    font-family: var(--font-cond-bold);
+    letter-spacing: 0.05em;
   }
 }
 
