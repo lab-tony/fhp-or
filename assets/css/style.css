@@ -1,0 +1,38 @@
+body {
+  font-family: "Arial";
+}
+
+.or-header {
+  background-color: #f8f9fa;
+  padding: calc(20 / 16 * 1rem);
+  text-align: center;
+}
+
+.or-logo {
+  width: calc(300 / 16 * 1rem);
+  height: auto;
+  margin-bottom: calc(32 / 16 * 1rem);
+  padding: 1rem;
+}
+
+.or-nav-item {
+  display: inline-block;
+  margin: 0 1rem 1rem 0;
+
+  a {
+    color: #007bff;
+  }
+}
+
+.or-main {
+  width: calc(800 / 16 * 1rem);
+  margin: calc(20 / 16 * 1rem) auto;
+  padding: 0 calc(20 / 16 * 1rem);
+}
+
+.or-footer {
+  background-color: #f8f9fa;
+  padding: calc(10 / 16 * 1rem);
+  text-align: center;
+  color: #777;
+}
