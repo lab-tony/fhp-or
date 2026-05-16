@@ -22,12 +22,6 @@
   }
 }
 
-.or-main {
-  width: calc(800 / 16 * 1rem);
-  margin: var(--space-xl) auto;
-  padding: 0 var(--space-l);
-}
-
 .or-footer {
   background-color: var(--color-bg);
   padding: var(--space-s);

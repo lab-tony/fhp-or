@@ -1,0 +1,62 @@
+:root {
+  /* =========================
+    TYPOGRAPHY
+========================= */
+  /* Fonts */
+  --font-regular:
+    SatoshiRegular, Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    sans-serif;
+  --font-italic:
+    SatoshiItalic, Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    sans-serif;
+  --font-light-italic:
+    SatoshiLightItalic, Avenir, Montserrat, Corbel, "URW Gothic",
+    source-sans-pro, sans-serif;
+  --font-bold:
+    SatoshiBold, Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    sans-serif;
+  --font-bold-italic:
+    SatoshiBoldItalic, Avenir, Montserrat, Corbel, "URW Gothic",
+    source-sans-pro, sans-serif;
+  --font-cond-bold: ExposeBold, "Times New Roman", serif;
+
+  /* Font Sizes (modular scale) */
+  --font-xs: 0.5rem; /* 8px */
+  --font-s: 0.75rem; /* 12px */
+  --font-m: 1rem; /* 16px */
+  --font-l: 1.25rem; /* 20px */
+  --font-xl: 1.5rem; /* 24px */
+  --font-xxl: 2rem; /* 32px */
+
+  /* =========================
+    SPACES
+========================= */
+  --space-xs: 0.5rem; /* 8px */
+  --space-s: 0.75rem; /* 12px */
+  --space-m: 1rem; /* 16px */
+  --space-l: 1.25rem; /* 20px */
+  --space-xl: 1.5rem; /* 24px */
+  --space-xxl: 2rem; /* 32px */
+
+  /* =========================
+    COLORS
+========================= */
+  --color-text: #1a1a1a;
+  --color-muted: #666;
+  --color-border: #e5e5e5;
+  --color-accent: #0066cc;
+  --color-white: #ffffff;
+  --color-bg: #f8f9fa;
+
+  /* =========================
+    GRID
+========================= */
+  /* Breakpoints */
+  --breakpoint-xs: 480px;
+  --breakpoint-s: 768px;
+  --breakpoint-m: 1024px;
+  --breakpoint-l: 1200px;
+
+  /* Module container grid */
+  --grid-gap: var(--space-l);
+}
