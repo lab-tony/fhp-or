@@ -1,0 +1,192 @@
+:root {
+  /* Fonts */
+  --font-sans: "Arial";
+
+  /* Font Sizes (modular scale) */
+  --font-xs: 0.5rem; /* 8px */
+  --font-s: 0.75rem; /* 12px */
+  --font-m: 1rem; /* 16px */
+  --font-l: 1.25rem; /* 20px */
+  --font-xl: 1.5rem; /* 24px */
+  --font-xxl: 2rem; /* 32px */
+
+  /* Spacing Sizes (modular scale) */
+  --space-xs: 0.5rem; /* 8px */
+  --space-s: 0.75rem; /* 12px */
+  --space-m: 1rem; /* 16px */
+  --space-l: 1.25rem; /* 20px */
+  --space-xl: 1.5rem; /* 24px */
+  --space-xxl: 2rem; /* 32px */
+
+  /* Colors */
+  --color-text: #1a1a1a;
+  --color-muted: #666;
+  --color-border: #e5e5e5;
+  --color-accent: #0066cc;
+  --color-white: #ffffff;
+  --color-bg: #f8f9fa;
+}
+
+/* =========================
+   BASE STYLES
+========================= */
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.or-richtext {
+  /* =========================
+   HEADINGS
+========================= */
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: var(--font-xxl);
+    margin-bottom: var(--space-xxl);
+  }
+
+  h2 {
+    font-size: var(--font-xl);
+    margin: var(--space-xl) 0;
+  }
+
+  h3 {
+    font-size: var(--font-l);
+    margin: var(--space-m) 0;
+  }
+
+  h4 {
+    font-size: var(--font-m);
+    color: var(--color-muted);
+    margin-top: var(--space-s);
+  }
+
+  /* =========================
+   TEXT ELEMENTS
+========================= */
+
+  p {
+    margin-bottom: var(--space-s);
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  /* =========================
+   LINKS
+========================= */
+
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  a:hover {
+    border-color: var(--color-accent);
+  }
+
+  a[target="_blank"]::before {
+    content: "↪";
+    color: var(--color-muted);
+  }
+
+  /* =========================
+   BLOCKQUOTE
+========================= */
+
+  blockquote {
+    border-left: 3px solid var(--color-border);
+    padding-left: var(--space-m);
+    margin: var(--space-xl) 0;
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  blockquote p {
+    margin: 0;
+  }
+
+  blockquote small {
+    display: block;
+    margin-top: var(--space-xs);
+    font-size: var(--font-s);
+  }
+
+  /* =========================
+   LISTS
+========================= */
+
+  ul,
+  ol {
+    padding-left: var(--space-xl);
+    margin-bottom: var(--space-s);
+  }
+
+  li + li {
+    margin-top: var(--space-xs);
+  }
+
+  /* =========================
+   UNORDERED LIST (UL)
+========================= */
+
+  ul {
+    list-style: none;
+  }
+
+  ul li {
+    position: relative;
+  }
+
+  ul li::before {
+    content: "•";
+    position: absolute;
+    top: -0.25em;
+    left: -0.625em;
+    font-size: 1.25em;
+    color: var(--color-accent);
+  }
+
+  /* =========================
+   ORDERED LIST (OL)
+========================= */
+
+  ol {
+    list-style: decimal;
+  }
+
+  ol li::marker {
+    font-weight: 700;
+  }
+}
+
+/* =========================
+   RESPONSIVE TYPOGRAPHY
+========================= */
+
+@media (min-width: 769px) {
+  html {
+    font-size: 112.5%; /* 18px */
+  }
+}
