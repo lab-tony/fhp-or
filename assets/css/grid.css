@@ -1,0 +1,32 @@
+.or-grid__container {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  gap: var(--space-l);
+}
+
+.or-grid__item {
+  background-color: var(--color-bg);
+  grid-column: auto / span var(--grid-span);
+}
+
+@media (min-width: 481px) {
+  .or-grid__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .or-grid__item--1 {
+    --grid-span: 1;
+  }
+
+  .or-grid__item--2 {
+    --grid-span: 2;
+  }
+}
+
+@media (min-width: 769px) {
+  .or-grid__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

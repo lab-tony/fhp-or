@@ -58,5 +58,6 @@
   --breakpoint-l: 1200px;
 
   /* Module container grid */
+  --grid-span: 1;
   --grid-gap: var(--space-l);
 }
