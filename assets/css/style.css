@@ -5,7 +5,9 @@
 }
 
 .or-logo {
-  width: calc(300 / 16 * 1rem);
+  display: inline;
+  width: 100%;
+  max-width: calc(300 / 16 * 1rem);
   height: auto;
   margin-bottom: var(--space-xl);
   padding: var(--space-m);

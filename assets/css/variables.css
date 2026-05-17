@@ -54,11 +54,13 @@
   /* Theme colors */
   --color-bg: var(--color-grey);
   --color-text: var(--color-black);
-  --color-border: var(--color-grey)
-    /* =========================
+  --color-border: var(--color-grey);
+
+  /* =========================
     GRID
 ========================= */
-    /* Breakpoints */ --breakpoint-xs: 480px;
+  /* Breakpoints */
+  --breakpoint-xs: 480px;
   --breakpoint-s: 768px;
   --breakpoint-m: 1024px;
   --breakpoint-l: 1200px;
