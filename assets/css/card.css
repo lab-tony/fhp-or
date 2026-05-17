@@ -1,0 +1,5 @@
+.or-card {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  outline: 4px solid var(--color-border);
+}

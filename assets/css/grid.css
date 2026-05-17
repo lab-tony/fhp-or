@@ -7,7 +7,6 @@
 }
 
 .or-grid__item {
-  background-color: var(--color-bg);
   grid-column: auto / span var(--grid-span);
 }
 

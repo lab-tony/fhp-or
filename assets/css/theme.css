@@ -1,0 +1,23 @@
+[data-theme="primary"] {
+  --color-bg: var(--color-blue);
+  --color-text: var(--color-white);
+  --color-border: var(--color-terra);
+}
+
+[data-theme="secondary"] {
+  --color-bg: var(--color-green);
+  --color-text: var(--color-black);
+  --color-border: var(--color-blue);
+}
+
+[data-theme="tertiary"] {
+  --color-bg: var(--color-yellow);
+  --color-text: var(--color-blue);
+  --color-border: var(--color-green);
+}
+
+[data-theme="quaternary"] {
+  --color-bg: var(--color-terra);
+  --color-text: var(--color-black);
+  --color-border: var(--color-yellow);
+}
