@@ -1,117 +1,60 @@
 // -----------
-// Variables
+// DOM Selection & Navigation
 // -----------
-let firstName = "Alice"; // string
-const age = 25; // number (constant)
-let isStudent = true; // boolean
-let emptyValue = null; // null
-let notDefined; // undefined
 
-console.log(firstName, age, isStudent);
+// Select elements
+const byId = document.getElementById("main-nav");
+console.log("By ID:", byId);
 
-// -----------
-// Standard Operations
-// -----------
-let a = 10;
-let b = 3;
+const byClass = document.getElementsByClassName("or-nav-item");
+console.log("By Class:", byClass);
 
-console.log("Addition:", a + b);
-console.log("Subtraction:", a - b);
-console.log("Multiplication:", a * b);
-console.log("Division:", a / b);
-console.log("Modulo:", a % b);
+const byTag = document.getElementsByTagName("nav");
+console.log("By Tag:", byTag);
 
-// Comparison
-console.log(a > b);
-console.log(a === b);
-console.log(a !== b);
+// Loop through HTMLCollection
+Array.from(byTag).forEach((nav) => {
+  console.log("Loop through navs:", nav);
+});
 
-// Logical
-console.log(true && false);
-console.log(true || false);
-console.log(!true);
+// Modern selectors
+const queryOne = document.querySelector("#main-nav .or-nav-item:first-child"); // first match
+console.log("Query One:", queryOne);
 
-// -----------
-// Arrays
-// -----------
-let fruits = ["apple", "banana", "cherry"];
+const queryAll = document.querySelectorAll("#main-nav .or-nav-item"); // all matches
+console.log("Query All:", queryAll);
 
-console.log(fruits[0]);
-fruits.push("orange");
-
-// Loop through array (for loop)
-for (let i = 0; i < fruits.length; i++) {
-  console.log("Fruit:", fruits[i]);
-}
-
-// Loop with for...of
-for (let fruit of fruits) {
-  console.log("For...of:", fruit);
-}
-
-// Array methods
-fruits.forEach((fruit, index) => {
-  console.log(index, fruit);
+// Loop through NodeList
+queryAll.forEach((item) => {
+  console.log("Loop through node list:", item);
 });
 
 // -----------
-// Objects (Literal Objects)
+// Navigating the DOM
 // -----------
-let person = {
-  name: "Bob",
-  age: 30,
-  isStudent: false,
-};
+const element = document.querySelector(".or-nav-item:nth-child(2)");
+console.log("Selected Element:", element);
 
-console.log(person.name);
+// Parent
+const parent = element.parentElement;
+console.log("Parent:", parent);
 
-// Add property
-person.city = "Berlin";
+const closestNav = element.closest("nav");
+console.log("Closest Nav:", closestNav);
 
-// Loop through object (for...in)
-for (let key in person) {
-  console.log(key + ":", person[key]);
-}
+// Children
+const children = element.children;
+console.log("Children:", children);
 
-// Object methods
-Object.keys(person).forEach((key) => {
-  console.log("Key:", key);
-});
+const firstChild = element.firstElementChild;
+console.log("First Child:", firstChild);
 
-Object.values(person).forEach((value) => {
-  console.log("Value:", value);
-});
+const lastChild = element.lastElementChild;
+console.log("Last Child:", lastChild);
 
-Object.entries(person).forEach(([key, value]) => {
-  console.log(key, value);
-});
+// Siblings
+const nextSibling = element.nextElementSibling;
+console.log("Next Sibling:", nextSibling);
 
-// -----------
-// Functions
-// -----------
-function greet(userName) {
-  return "Hello " + userName;
-}
-
-console.log(greet("Alice"));
-
-// Arrow function
-const add = (x, y) => x + y;
-console.log(add(5, 7));
-
-// -----------
-// Conditionals
-// -----------
-let score = 85;
-
-if (score >= 90) {
-  console.log("Grade: A");
-} else if (score >= 70) {
-  console.log("Grade: B");
-} else {
-  console.log("Grade: C");
-}
-
-// Ternary operator
-let result = score >= 50 ? "Passed" : "Failed";
-console.log(result);
+const previousSibling = element.previousElementSibling;
+console.log("Previous Sibling:", previousSibling);
