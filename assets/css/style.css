@@ -18,25 +18,6 @@
   padding: var(--space-m);
 }
 
-.or-nav-item {
-  display: inline-block;
-  margin: 0 var(--space-m) var(--space-m) 0;
-
-  a {
-    color: var(--color-accent);
-    font-family: var(--font-cond-bold);
-    letter-spacing: 0.05em;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
-  }
-
-  a:hover,
-  a:focus {
-    border-color: currentColor;
-  }
-}
-
 .or-main__title {
   display: inline-block;
   color: var(--color-blue);

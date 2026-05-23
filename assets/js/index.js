@@ -1,48 +1,56 @@
 // -----------
-// DOM Manipulation
+// Mobile Navigation
 // -----------
 
-const box = document.querySelector(".box");
+const nav = document.querySelector("#main-nav");
+const button = document.querySelector("#main-nav-toggle");
+let isOpen = false;
+const isOpenClass = "js-is-open";
 
-// Change text content
-box.textContent = "Hello World";
+// Use event listener to toggle mobile navigation
+button.addEventListener("click", () => toggle());
 
-// Change HTML content
-box.innerHTML = "Getting Blue Text";
+// Use event listener to close mobile navigation when Escape key is pressed
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && isOpen) {
+    close();
+  }
+});
 
-// Change styles
-box.style.color = "blue";
-box.style.backgroundColor = "lightblue";
-box.style.padding = "10px";
+/**
+ * Opens the mobile navigation and updates the relevant attributes and state.
+ */
+function open() {
+  nav.classList.add(isOpenClass);
+  nav.removeAttribute("aria-hidden");
 
-// Add / remove classes
-box.classList.add("active");
-box.classList.remove("active");
-box.classList.toggle("active");
+  nav.querySelectorAll("a").forEach((link) => {
+    link.removeAttribute("tabindex");
+  });
 
-// Set / get attributes
-box.setAttribute("data-test", "123");
-console.log(box.getAttribute("data-test"));
+  isOpen = true;
+}
 
-// Create new element
-const newElement = document.createElement("p");
-newElement.textContent = "I am new here!";
+/**
+ * Closes the mobile navigation and updates the relevant attributes and state.
+ */
+function close() {
+  nav.classList.remove(isOpenClass);
+  nav.setAttribute("aria-hidden", "true");
 
-// Insert element
-box.appendChild(newElement);
+  nav.querySelectorAll("a").forEach((link) => {
+    link.setAttribute("tabindex", "-1");
+  });
 
-// Insert before another element
-const another = document.createElement("span");
-another.textContent = "Before paragraph";
-box.insertBefore(another, newElement);
+  isOpen = false;
+}
 
-// Remove element
-newElement.remove();
+/**
+ * Toggles the mobile navigation between open and closed states based on the current state.
+ */
+function toggle() {
+  button.setAttribute("aria-expanded", !isOpen);
+  isOpen ? close() : open();
+}
 
-// Create multiple line HTML content with template literals and variables
-const html = `
-    <h2>Title</h2>
-    ${newElement.textContent}
-`;
-
-box.innerHTML = html;
+close(); // Ensure mobile navigation is closed on page load
