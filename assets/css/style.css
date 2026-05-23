@@ -1,3 +1,8 @@
+*:focus {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
 .or-header {
   background-color: var(--color-bg);
   padding: var(--space-l);
@@ -5,7 +10,7 @@
 }
 
 .or-logo {
-  display: inline;
+  display: inline-block;
   width: 100%;
   max-width: calc(300 / 16 * 1rem);
   height: auto;
@@ -21,6 +26,14 @@
     color: var(--color-accent);
     font-family: var(--font-cond-bold);
     letter-spacing: 0.05em;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  a:hover,
+  a:focus {
+    border-color: currentColor;
   }
 }
 
