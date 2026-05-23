@@ -1,60 +1,48 @@
 // -----------
-// DOM Selection & Navigation
+// DOM Manipulation
 // -----------
 
-// Select elements
-const byId = document.getElementById("main-nav");
-console.log("By ID:", byId);
+const box = document.querySelector(".box");
 
-const byClass = document.getElementsByClassName("or-nav-item");
-console.log("By Class:", byClass);
+// Change text content
+box.textContent = "Hello World";
 
-const byTag = document.getElementsByTagName("nav");
-console.log("By Tag:", byTag);
+// Change HTML content
+box.innerHTML = "Getting Blue Text";
 
-// Loop through HTMLCollection
-Array.from(byTag).forEach((nav) => {
-  console.log("Loop through navs:", nav);
-});
+// Change styles
+box.style.color = "blue";
+box.style.backgroundColor = "lightblue";
+box.style.padding = "10px";
 
-// Modern selectors
-const queryOne = document.querySelector("#main-nav .or-nav-item:first-child"); // first match
-console.log("Query One:", queryOne);
+// Add / remove classes
+box.classList.add("active");
+box.classList.remove("active");
+box.classList.toggle("active");
 
-const queryAll = document.querySelectorAll("#main-nav .or-nav-item"); // all matches
-console.log("Query All:", queryAll);
+// Set / get attributes
+box.setAttribute("data-test", "123");
+console.log(box.getAttribute("data-test"));
 
-// Loop through NodeList
-queryAll.forEach((item) => {
-  console.log("Loop through node list:", item);
-});
+// Create new element
+const newElement = document.createElement("p");
+newElement.textContent = "I am new here!";
 
-// -----------
-// Navigating the DOM
-// -----------
-const element = document.querySelector(".or-nav-item:nth-child(2)");
-console.log("Selected Element:", element);
+// Insert element
+box.appendChild(newElement);
 
-// Parent
-const parent = element.parentElement;
-console.log("Parent:", parent);
+// Insert before another element
+const another = document.createElement("span");
+another.textContent = "Before paragraph";
+box.insertBefore(another, newElement);
 
-const closestNav = element.closest("nav");
-console.log("Closest Nav:", closestNav);
+// Remove element
+newElement.remove();
 
-// Children
-const children = element.children;
-console.log("Children:", children);
+// Create multiple line HTML content with template literals and variables
+const html = `
+    <h2>Title</h2>
+    ${newElement.textContent}
+`;
 
-const firstChild = element.firstElementChild;
-console.log("First Child:", firstChild);
-
-const lastChild = element.lastElementChild;
-console.log("Last Child:", lastChild);
-
-// Siblings
-const nextSibling = element.nextElementSibling;
-console.log("Next Sibling:", nextSibling);
-
-const previousSibling = element.previousElementSibling;
-console.log("Previous Sibling:", previousSibling);
+box.innerHTML = html;
