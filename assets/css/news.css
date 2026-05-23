@@ -1,0 +1,51 @@
+/* =========================
+   NEWS
+========================= */
+.or-news {
+  margin-bottom: var(--space-l);
+  padding-bottom: var(--space-l);
+  border-bottom: 3px dotted var(--color-accent);
+  display: flex;
+  flex-direction: column;
+
+  .or-news__title {
+    font-family: var(--font-cond-bold);
+    font-size: var(--font-m);
+    color: var(--color-blue);
+    margin: 0;
+  }
+
+  .or-news__date {
+    display: block;
+    font-family: var(--font-bold-italic);
+    font-size: var(--font-s);
+    color: var(--color-muted);
+    margin-bottom: var(--space-xs);
+  }
+
+  .or-news__desc {
+    text-wrap: auto;
+    hyphens: auto;
+  }
+
+  .or-news__link {
+    font-family: var(--font-bold-italic);
+    font-size: var(--font-s);
+    color: var(--color-accent);
+    align-self: end;
+  }
+
+  .or-news__link::before {
+    content: "▶︎";
+    display: inline-block;
+    font-family: var(--font-regular);
+    font-size: 0.75em;
+    margin-right: var(--space-xxs);
+  }
+}
+
+.or-news:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
