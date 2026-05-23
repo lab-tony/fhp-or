@@ -81,43 +81,43 @@ body {
   color: var(--color-text);
 }
 
+/* =========================
+ HEADINGS
+========================= */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-cond-bold);
+}
+
+h1 {
+  font-size: var(--font-xxl);
+  margin-bottom: var(--space-xxl);
+}
+
+h2 {
+  font-size: var(--font-xl);
+  margin: var(--space-xl) 0;
+}
+
+h3 {
+  font-size: var(--font-l);
+  margin: var(--space-m) 0;
+}
+
+h4 {
+  font-size: var(--font-m);
+  color: var(--color-muted);
+  margin-top: var(--space-s);
+}
+
+/* =========================
+ TEXT ELEMENTS
+========================= */
+
 .or-richtext {
-  /* =========================
-   HEADINGS
-========================= */
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: var(--font-cond-bold);
-  }
-
-  h1 {
-    font-size: var(--font-xxl);
-    margin-bottom: var(--space-xxl);
-  }
-
-  h2 {
-    font-size: var(--font-xl);
-    margin: var(--space-xl) 0;
-  }
-
-  h3 {
-    font-size: var(--font-l);
-    margin: var(--space-m) 0;
-  }
-
-  h4 {
-    font-size: var(--font-m);
-    color: var(--color-muted);
-    margin-top: var(--space-s);
-  }
-
-  /* =========================
-   TEXT ELEMENTS
-========================= */
-
   p {
     margin-bottom: var(--space-s);
   }

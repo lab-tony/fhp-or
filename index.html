@@ -60,7 +60,7 @@
         alt="OpenRewi Logo"
         class="or-logo"
       />
-      <nav class="or-nav">
+      <nav class="or-nav" id="main-nav" aria-label="Hauptnavigation">
         <ul class="or-nav-list">
           <li class="or-nav-item"><a href="#">Startseite</a></li>
           <li class="or-nav-item"><a href="#">Über uns</a></li>
@@ -70,167 +70,204 @@
       </nav>
     </header>
     <div class="or-template">
-      <main class="or-main or-grid__container">
-        <div
-          class="or-card or-grid__item or-grid__item--1"
-          data-theme="primary"
-        >
-          <picture class="or-card__picture">
-            <source
-              media="(min-width:769px)"
-              srcset="assets/img/product-1-186.png"
-            />
-            <source
-              media="(min-width:481px)"
-              srcset="assets/img/product-1-320.png"
-            />
-            <img
-              src="assets/img/product-1-406.png"
-              class="or-card__img"
-              alt=""
-            />
-          </picture>
-          <h3 class="or-card__title">Hier entsteht eine Card</h3>
-          <p class="or-card__desc">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut l
-          </p>
-          <a href="#" class="or-card__link">Mehr erfahren</a>
-        </div>
-        <div
-          class="or-card or-grid__item or-grid__item--1"
-          data-theme="secondary"
-        >
-          <picture class="or-card__picture">
-            <source
-              media="(min-width:769px)"
-              srcset="assets/img/product-2-186.png"
-            />
-            <source
-              media="(min-width:481px)"
-              srcset="assets/img/product-2-320.png"
-            />
-            <img
-              src="assets/img/product-2-406.png"
-              class="or-card__img"
-              alt=""
-            />
-          </picture>
-          <h3 class="or-card__title">Hier entsteht eine Card</h3>
-          <p class="or-card__desc">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut l
-          </p>
-          <a href="#" class="or-card__link">Mehr erfahren</a>
-        </div>
-        <div
-          class="or-card or-grid__item or-grid__item--1"
-          data-theme="tertiary"
-        >
-          <picture class="or-card__picture">
-            <source
-              media="(min-width:769px)"
-              srcset="assets/img/product-3-186.png"
-            />
-            <source
-              media="(min-width:481px)"
-              srcset="assets/img/product-3-320.png"
-            />
-            <img
-              src="assets/img/product-3-406.png"
-              class="or-card__img"
-              alt=""
-            />
-          </picture>
-          <h3 class="or-card__title">Hier entsteht</h3>
-          <p class="or-card__desc">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut l
-          </p>
-          <a href="#" class="or-card__link">Mehr erfahren</a>
-        </div>
-        <div
-          class="or-card or-grid__item or-grid__item--1"
-          data-theme="quaternary"
-        >
-          <picture class="or-card__picture">
-            <source
-              media="(min-width:769px)"
-              srcset="assets/img/product-1-186.png"
-            />
-            <source
-              media="(min-width:481px)"
-              srcset="assets/img/product-1-320.png"
-            />
-            <img
-              src="assets/img/product-1-406.png"
-              class="or-card__img"
-              alt=""
-            />
-          </picture>
-          <h3 class="or-card__title">Hier entsteht eine Card</h3>
-          <p class="or-card__desc">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut l
-          </p>
-          <a href="#" class="or-card__link">Mehr erfahren</a>
-        </div>
-        <div
-          class="or-card or-grid__item or-grid__item--2"
-          data-theme="primary"
-        >
-          <picture class="or-card__picture">
-            <source
-              media="(min-width:769px)"
-              srcset="assets/img/product-1-186.png"
-            />
-            <source
-              media="(min-width:481px)"
-              srcset="assets/img/product-1-320.png"
-            />
-            <img
-              src="assets/img/product-1-406.png"
-              class="or-card__img"
-              alt=""
-            />
-          </picture>
-          <h3 class="or-card__title">Hier entsteht eine Card</h3>
-          <p class="or-card__desc">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut l
-          </p>
-          <a href="#" class="or-card__link">Mehr erfahren</a>
-        </div>
-        <div
-          class="or-card or-grid__item or-grid__item--2"
-          data-theme="secondary"
-        >
-          <picture class="or-card__picture">
-            <source
-              media="(min-width:769px)"
-              srcset="assets/img/product-1-186.png"
-            />
-            <source
-              media="(min-width:481px)"
-              srcset="assets/img/product-1-320.png"
-            />
-            <img
-              src="assets/img/product-1-406.png"
-              class="or-card__img"
-              alt=""
-            />
-          </picture>
-          <h3 class="or-card__title">Hier entsteht</h3>
-          <p class="or-card__desc">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut l
-          </p>
-          <a href="#" class="or-card__link">Mehr erfahren</a>
-        </div>
+      <main class="or-main">
+        <h1 class="or-main__title">Willkommen bei OpenRewi</h1>
+        <section class="or-section" aria-label="Unsere Mission">
+          <h2 class="or-section__title">Unsere Mission</h2>
+          <div class="or-richtext">
+            <p>
+              OpenRewi hat sich 2020 als Initiative für eine offene
+              Rechtswissenschaft gegründet. Ziel der Initiative ist die
+              Erstellung von frei zugänglichen und verwendbaren
+              rechtswissenschaftlichen Materialien nach der Open Definition.
+              Dabei streben wir hohe inhaltliche Qualität, Aktualität und
+              Veränderbarkeit an. Die Publikationsprojekte arbeiten dezentral,
+              autonom und kooperativ und werden bei ihrer Arbeit von OpenRewi
+              bestmöglich unterstützt. Viele Projekte veröffentlichen ihre
+              Bücher in renommierten Verlagen. Zugleich hat jedes Buch einen
+              „digitalen Zwilling“ auf der Plattform Wikibooks oder anderen
+              offenen Plattformen. Dort können die Inhalte der Bücher
+              kommentiert und diskutiert werden. Zudem sind all unsere
+              Materialien frei verwendbar. OpenRewi ist aber nicht nur eine
+              Plattform für offene Publikationsprojekte. Wir sind eine
+              Community, um eigenes rechtliches Wissen zu diskutieren und zu
+              teilen. Alle sind willkommen, unabhängig von Geschlecht oder
+              Herkunft. Eine größtmögliche Vielfalt versuchen wir über unser
+              Diversity-Konzept zu erreichen. Die Initiative wird von einem als
+              gemeinnützig anerkannten Verein getragen. Wir freuen uns stets
+              über neue Projektvorschläge und Mitglieder!
+            </p>
+          </div>
+        </section>
+        <section class="or-section" aria-label="Unsere Projekte">
+          <h2 class="or-section__title">Unsere Projekte</h2>
+          <ul class="or-grid__container">
+            <li
+              class="or-card or-grid__item or-grid__item--1"
+              data-theme="primary"
+            >
+              <picture class="or-card__picture">
+                <source
+                  media="(min-width:769px)"
+                  srcset="assets/img/product-1-186.png"
+                />
+                <source
+                  media="(min-width:481px)"
+                  srcset="assets/img/product-1-320.png"
+                />
+                <img
+                  src="assets/img/product-1-406.png"
+                  class="or-card__img"
+                  alt=""
+                />
+              </picture>
+              <h3 class="or-card__title">Hier entsteht eine Card</h3>
+              <p class="or-card__desc">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut l
+              </p>
+              <a href="#" class="or-card__link">Mehr erfahren</a>
+            </li>
+            <li
+              class="or-card or-grid__item or-grid__item--1"
+              data-theme="secondary"
+            >
+              <picture class="or-card__picture">
+                <source
+                  media="(min-width:769px)"
+                  srcset="assets/img/product-2-186.png"
+                />
+                <source
+                  media="(min-width:481px)"
+                  srcset="assets/img/product-2-320.png"
+                />
+                <img
+                  src="assets/img/product-2-406.png"
+                  class="or-card__img"
+                  alt=""
+                />
+              </picture>
+              <h3 class="or-card__title">Hier entsteht eine Card</h3>
+              <p class="or-card__desc">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut l
+              </p>
+              <a href="#" class="or-card__link">Mehr erfahren</a>
+            </li>
+            <li
+              class="or-card or-grid__item or-grid__item--1"
+              data-theme="tertiary"
+            >
+              <picture class="or-card__picture">
+                <source
+                  media="(min-width:769px)"
+                  srcset="assets/img/product-3-186.png"
+                />
+                <source
+                  media="(min-width:481px)"
+                  srcset="assets/img/product-3-320.png"
+                />
+                <img
+                  src="assets/img/product-3-406.png"
+                  class="or-card__img"
+                  alt=""
+                />
+              </picture>
+              <h3 class="or-card__title">Hier entsteht</h3>
+              <p class="or-card__desc">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut l
+              </p>
+              <a href="#" class="or-card__link">Mehr erfahren</a>
+            </li>
+            <li
+              class="or-card or-grid__item or-grid__item--1"
+              data-theme="quaternary"
+            >
+              <picture class="or-card__picture">
+                <source
+                  media="(min-width:769px)"
+                  srcset="assets/img/product-1-186.png"
+                />
+                <source
+                  media="(min-width:481px)"
+                  srcset="assets/img/product-1-320.png"
+                />
+                <img
+                  src="assets/img/product-1-406.png"
+                  class="or-card__img"
+                  alt=""
+                />
+              </picture>
+              <h3 class="or-card__title">Hier entsteht eine Card</h3>
+              <p class="or-card__desc">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut l
+              </p>
+              <a href="#" class="or-card__link">Mehr erfahren</a>
+            </li>
+            <li
+              class="or-card or-grid__item or-grid__item--2"
+              data-theme="primary"
+            >
+              <picture class="or-card__picture">
+                <source
+                  media="(min-width:769px)"
+                  srcset="assets/img/product-1-186.png"
+                />
+                <source
+                  media="(min-width:481px)"
+                  srcset="assets/img/product-1-320.png"
+                />
+                <img
+                  src="assets/img/product-1-406.png"
+                  class="or-card__img"
+                  alt=""
+                />
+              </picture>
+              <h3 class="or-card__title">Hier entsteht eine Card</h3>
+              <p class="or-card__desc">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut l
+              </p>
+              <a href="#" class="or-card__link">Mehr erfahren</a>
+            </li>
+            <li
+              class="or-card or-grid__item or-grid__item--2"
+              data-theme="secondary"
+            >
+              <picture class="or-card__picture">
+                <source
+                  media="(min-width:769px)"
+                  srcset="assets/img/product-1-186.png"
+                />
+                <source
+                  media="(min-width:481px)"
+                  srcset="assets/img/product-1-320.png"
+                />
+                <img
+                  src="assets/img/product-1-406.png"
+                  class="or-card__img"
+                  alt=""
+                />
+              </picture>
+              <h3 class="or-card__title">Hier entsteht</h3>
+              <p class="or-card__desc">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut l
+              </p>
+              <a href="#" class="or-card__link">Mehr erfahren</a>
+            </li>
+          </ul>
+        </section>
+        <section class="or-section" aria-label="Aktuelles">
+          <h2 class="or-section__title">Aktuelles</h2>
+          <!-- Hier entsteht eine Newsliste -->
+        </section>
       </main>
     </div>
     <footer class="or-footer">
-      <nav class="or-footer-nav">
+      <nav class="or-footer-nav" aria-label="Fußzeilenavigation">
         <ul class="or-nav-list">
           <li class="or-nav-item"><a href="impressum.html">Impressum</a></li>
           <li class="or-nav-item"><a href="#">Datenschutz</a></li>

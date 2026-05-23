@@ -1,3 +1,6 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
 .or-template,
 .or-template--aside {
   max-width: calc(900 / 16 * 1rem);
@@ -31,4 +34,21 @@
 
 .or-aside h2:first-of-type {
   margin-top: 0;
+}
+
+/* =========================
+   SECTION
+========================= */
+.or-section {
+  padding: var(--space-xxl) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.or-section:last-child {
+  border-bottom: 0;
+}
+
+.or-section__title {
+  margin-top: 0;
+  color: var(--color-accent);
 }

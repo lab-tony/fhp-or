@@ -24,6 +24,12 @@
   }
 }
 
+.or-main__title {
+  display: inline-block;
+  color: var(--color-blue);
+  border-bottom: 4px solid var(--color-accent);
+}
+
 .or-footer {
   background-color: var(--color-bg);
   padding: var(--space-s);

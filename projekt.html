@@ -60,7 +60,7 @@
         alt="OpenRewi Logo"
         class="or-logo"
       />
-      <nav class="or-nav">
+      <nav class="or-nav" id="main-nav" aria-label="Hauptnavigation">
         <ul class="or-nav-list">
           <li class="or-nav-item"><a href="index.html">Startseite</a></li>
           <li class="or-nav-item"><a href="#">Über uns</a></li>
@@ -71,15 +71,18 @@
     </header>
     <div class="or-template or-template--aside">
       <main class="or-main">
-        <div class="or-richtext">
-          <h1>Heading 1</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-            doloremque veniam omnis? Quo, fugiat quis? Reprehenderit delectus
-            cupiditate perspiciatis temporibus cum sapiente aspernatur id odio
-            magnam! Fugiat est dolorum sunt?
-          </p>
-        </div>
+        <h1 class="or-main__title">Projekttitel</h1>
+        <section class="or-section" aria-label="Projekttitel">
+          <div class="or-richtext">
+            <h1>Heading 1</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+              doloremque veniam omnis? Quo, fugiat quis? Reprehenderit delectus
+              cupiditate perspiciatis temporibus cum sapiente aspernatur id odio
+              magnam! Fugiat est dolorum sunt?
+            </p>
+          </div>
+        </section>
       </main>
       <aside class="or-aside">
         <div class="or-richtext">
@@ -120,7 +123,7 @@
       </aside>
     </div>
     <footer class="or-footer">
-      <nav class="or-footer-nav">
+      <nav class="or-footer-nav" aria-label="Fußzeilenavigation">
         <ul class="or-nav-list">
           <li class="or-nav-item"><a href="impressum.html">Impressum</a></li>
           <li class="or-nav-item"><a href="#">Datenschutz</a></li>
