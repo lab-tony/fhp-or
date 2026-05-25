@@ -11,14 +11,14 @@
  */
 export class MobileNav {
   constructor(navId, toggleButtonId) {
-    this.nav = document.querySelector("[data-js-mobile-nav]");
+    this.nav = document.querySelector('[data-js-mobile-nav]');
     this.toggleBtn = this.nav.previousElementSibling; // Assuming the toggle button is the previous sibling of the nav element
     this.isOpen = false;
-    this.toggleClass = "js-is-open";
+    this.toggleClass = 'js-is-open';
 
     if (!this.nav || !this.toggleBtn) {
       console.error(
-        "MobileNav: Navigation element or toggle button not found.",
+        'MobileNav: Navigation element or toggle button not found.'
       );
       return;
     }
@@ -28,11 +28,11 @@ export class MobileNav {
 
   init() {
     // Use event listener to toggle mobile navigation
-    this.toggleBtn.addEventListener("click", () => this.toggle());
+    this.toggleBtn.addEventListener('click', () => this.toggle());
 
     // Use event listener to close mobile navigation when Escape key is pressed
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && this.isOpen) {
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
         this.close();
       }
     });
@@ -45,12 +45,12 @@ export class MobileNav {
    * Functions to open and close the mobile navigation, as well as toggle between the two states.
    */
   open() {
-    this.toggleBtn.setAttribute("aria-expanded", "true");
+    this.toggleBtn.setAttribute('aria-expanded', 'true');
     this.nav.classList.add(this.toggleClass);
-    this.nav.removeAttribute("aria-hidden");
+    this.nav.removeAttribute('aria-hidden');
 
-    this.nav.querySelectorAll("a").forEach((link) => {
-      link.removeAttribute("tabindex");
+    this.nav.querySelectorAll('a').forEach((link) => {
+      link.removeAttribute('tabindex');
     });
 
     this.isOpen = true;
@@ -60,12 +60,12 @@ export class MobileNav {
    * Closes the mobile navigation and updates the relevant attributes and state.
    */
   close() {
-    this.toggleBtn.setAttribute("aria-expanded", "false");
+    this.toggleBtn.setAttribute('aria-expanded', 'false');
     this.nav.classList.remove(this.toggleClass);
-    this.nav.setAttribute("aria-hidden", "true");
+    this.nav.setAttribute('aria-hidden', 'true');
 
-    this.nav.querySelectorAll("a").forEach((link) => {
-      link.setAttribute("tabindex", "-1");
+    this.nav.querySelectorAll('a').forEach((link) => {
+      link.setAttribute('tabindex', '-1');
     });
 
     this.isOpen = false;

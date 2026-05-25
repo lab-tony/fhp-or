@@ -56,7 +56,7 @@
   .or-card__link::after {
     display: inline-block;
     vertical-align: middle;
-    content: "▶︎";
+    content: '▶︎';
     font-size: 0.75em;
     margin-left: var(--space-s);
     opacity: 0;
@@ -87,7 +87,7 @@
 }
 
 @media (min-width: 481px) {
-  .or-card[class*="or-grid__item--2"] {
+  .or-card[class*='or-grid__item--2'] {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto 1fr;
     column-gap: var(--space-m);

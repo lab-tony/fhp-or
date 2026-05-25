@@ -36,7 +36,7 @@
   }
 
   .or-news__link::before {
-    content: "▶︎";
+    content: '▶︎';
     display: inline-block;
     font-family: var(--font-regular);
     font-size: 0.75em;

@@ -70,7 +70,7 @@
   transition: all 0.3s ease;
 }
 
-.or-nav__toggle[aria-expanded="true"] {
+.or-nav__toggle[aria-expanded='true'] {
   .or-nav__toggle-bar:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
   }

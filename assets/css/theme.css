@@ -1,4 +1,4 @@
-[data-theme="primary"] {
+[data-theme='primary'] {
   --color-bg: var(--color-blue);
   --color-text: var(--color-white);
   --color-border: var(--color-white);
@@ -6,7 +6,7 @@
   --color-accent: var(--color-white);
 }
 
-[data-theme="secondary"] {
+[data-theme='secondary'] {
   --color-bg: var(--color-green);
   --color-text: var(--color-black);
   --color-border: var(--color-black);
@@ -14,7 +14,7 @@
   --color-accent: var(--color-black);
 }
 
-[data-theme="tertiary"] {
+[data-theme='tertiary'] {
   --color-bg: var(--color-yellow);
   --color-text: var(--color-blue);
   --color-border: var(--color-blue);
@@ -22,7 +22,7 @@
   --color-accent: var(--color-blue);
 }
 
-[data-theme="quaternary"] {
+[data-theme='quaternary'] {
   --color-bg: var(--color-terra);
   --color-text: var(--color-black);
   --color-border: var(--color-black);

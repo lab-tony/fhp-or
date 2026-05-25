@@ -4,21 +4,21 @@
 ========================= */
   /* Fonts */
   --font-regular:
-    SatoshiRegular, Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    SatoshiRegular, Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro,
     sans-serif;
   --font-italic:
-    SatoshiItalic, Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    SatoshiItalic, Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro,
     sans-serif;
   --font-light-italic:
-    SatoshiLightItalic, Avenir, Montserrat, Corbel, "URW Gothic",
+    SatoshiLightItalic, Avenir, Montserrat, Corbel, 'URW Gothic',
     source-sans-pro, sans-serif;
   --font-bold:
-    SatoshiBold, Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    SatoshiBold, Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro,
     sans-serif;
   --font-bold-italic:
-    SatoshiBoldItalic, Avenir, Montserrat, Corbel, "URW Gothic",
+    SatoshiBoldItalic, Avenir, Montserrat, Corbel, 'URW Gothic',
     source-sans-pro, sans-serif;
-  --font-cond-bold: ExposeBold, "Times New Roman", serif;
+  --font-cond-bold: ExposeBold, 'Times New Roman', serif;
 
   /* Font Sizes (modular scale) */
   --font-xs: 0.5rem; /* 8px */
