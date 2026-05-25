@@ -29,4 +29,8 @@
   padding: var(--space-s);
   text-align: center;
   color: var(--color-muted);
+
+  .or-nav__list {
+    margin-bottom: var(--space-s);
+  }
 }
