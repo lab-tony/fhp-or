@@ -21,7 +21,7 @@ import '../css/components/news.css';
 ========================= */
 
 /* JS Modules */
-import { Nav } from './Nav.js';
+import { Nav } from './Nav';
 
 /* Initialization */
 new Nav();
