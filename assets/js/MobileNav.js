@@ -10,7 +10,7 @@
  * toggleClass {string}: CSS class that is added to the navigation element when it is open to trigger animation.
  */
 export class MobileNav {
-  constructor(navId, toggleButtonId) {
+  constructor() {
     this.nav = document.querySelector('[data-js-mobile-nav]');
     this.toggleBtn = this.nav.previousElementSibling; // Assuming the toggle button is the previous sibling of the nav element
     this.isOpen = false;
