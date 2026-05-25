@@ -1,0 +1,31 @@
+{
+  "name": "fhp-webentwicklung",
+  "version": "1.0.0",
+  "description": "HTML, CSS and JavaScript Tutorial für die Fachhochschule Potsdam",
+  "keywords": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Formatter",
+    "Linter",
+    "Bundler"
+  ],
+  "homepage": "https://github.com/lab-tony/fhp-webdev-lessons#readme",
+  "bugs": {
+    "url": "https://github.com/lab-tony/fhp-webdev-lessons/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lab-tony/fhp-webdev-lessons.git"
+  },
+  "license": "ISC",
+  "author": "Antonio Galindo",
+  "type": "module",
+  "main": "assets/js/index.js",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3"
+  }
+}
