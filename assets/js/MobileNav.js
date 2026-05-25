@@ -6,17 +6,22 @@
  * Class to manage the mobile navigation, including opening, closing, and toggling the navigation menu, as well as handling accessibility attributes.
  * The class ensures that the mobile navigation is closed on page load for better accessibility and user experience.
  *
- * navElement {String}: ID of the mobile navigation menu.
- * toggleButton {String}: ID of the button to toggle the mobile navigation menu.
  * isOpen {boolean}: whether the mobile navigation is open or closed.
  * toggleClass {string}: CSS class that is added to the navigation element when it is open to trigger animation.
  */
 export class MobileNav {
   constructor(navId, toggleButtonId) {
-    this.nav = document.getElementById(navId);
-    this.toggleBtn = document.getElementById(toggleButtonId);
+    this.nav = document.querySelector("[data-js-mobile-nav]");
+    this.toggleBtn = this.nav.previousElementSibling; // Assuming the toggle button is the previous sibling of the nav element
     this.isOpen = false;
     this.toggleClass = "js-is-open";
+
+    if (!this.nav || !this.toggleBtn) {
+      console.error(
+        "MobileNav: Navigation element or toggle button not found.",
+      );
+      return;
+    }
 
     this.init();
   }

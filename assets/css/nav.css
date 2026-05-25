@@ -15,13 +15,13 @@
   padding: var(--space-xxs);
 }
 
-#main-nav .or-nav__list {
+[data-js-mobile-nav] .or-nav__list {
   max-height: 0;
   overflow: hidden;
   transition: max-height 1s ease;
 }
 
-#main-nav.js-is-open .or-nav__list {
+[data-js-mobile-nav].js-is-open .or-nav__list {
   max-height: 500px; /* Arbitrary large value to allow full expansion */
 }
 
@@ -46,7 +46,7 @@
     display: none;
   }
 
-  #main-nav .or-nav__list {
+  [data-js-mobile-nav] .or-nav__list {
     max-height: unset;
   }
 
