@@ -1,18 +1,27 @@
-import { MobileNav } from './MobileNav.js';
+/* =========================
+   CSS Imports
+========================= */
 
-/* Import CSS files */
-import '../css/reset.css';
-import '../css/variables.css';
-import '../css/typography.css';
-import '../css/layout.css';
-import '../css/grid.css';
-import '../css/theme.css';
-import '../css/style.css';
-import '../css/card.css';
-import '../css/nav.css';
-import '../css/news.css';
+/* CSS Foundation */
+import '../css/foundation/reset.css';
+import '../css/foundation/variables.css';
+import '../css/foundation/typography.css';
+import '../css/foundation/layout.css';
+import '../css/foundation/grid.css';
+import '../css/foundation/theme.css';
+import '../css/foundation/style.css';
 
-/**
- * Initializes the mobile navigation by creating an instance of the class MobileNav and passing the relevant parameters
- */
-new MobileNav();
+/* CSS Components */
+import '../css/components/card.css';
+import '../css/components/nav.css';
+import '../css/components/news.css';
+
+/* =========================
+   JS Imports
+========================= */
+
+/* JS Modules */
+import { Nav } from './Nav.js';
+
+/* Initialization */
+new Nav();

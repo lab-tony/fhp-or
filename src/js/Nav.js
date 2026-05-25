@@ -9,7 +9,7 @@
  * isOpen {boolean}: whether the mobile navigation is open or closed.
  * toggleClass {string}: CSS class that is added to the navigation element when it is open to trigger animation.
  */
-export class MobileNav {
+export class Nav {
   constructor() {
     this.nav = document.querySelector('[data-js-mobile-nav]');
     this.toggleBtn = this.nav.previousElementSibling; // Assuming the toggle button is the previous sibling of the nav element
@@ -17,9 +17,7 @@ export class MobileNav {
     this.toggleClass = 'js-is-open';
 
     if (!this.nav || !this.toggleBtn) {
-      console.error(
-        'MobileNav: Navigation element or toggle button not found.'
-      );
+      console.error('Nav.js: Navigation element or toggle button not found.');
       return;
     }
 
