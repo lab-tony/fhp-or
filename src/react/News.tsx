@@ -1,8 +1,17 @@
 import React from 'react';
+import type { JSX } from 'react';
 
-export default function News() {
-  const sectionTitle = 'Aktuelles';
-  const newsData = [
+interface TNewsItem {
+  title: string;
+  date: string;
+  description: string;
+  link: string;
+  linkText: string;
+}
+
+export default function News(): JSX.Element {
+  const sectionTitle: string = 'Aktuelles';
+  const newsData: TNewsItem[] = [
     {
       title: 'News-Titel',
       date: '19. Mai 2016',
@@ -29,7 +38,10 @@ export default function News() {
     },
   ];
 
-  const truncateDescription = (description, maxLength) => {
+  const truncateDescription = (
+    description: string,
+    maxLength: number
+  ): string => {
     if (description.length <= maxLength) {
       return description;
     }
