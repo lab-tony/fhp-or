@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import News from './News.jsx';
+import News from './News';
 
 const root = document.getElementById('react-root');
 
