@@ -2,17 +2,10 @@ import React from 'react';
 import type { JSX } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import Pager from './Pager';
-
-export interface INewsItem {
-  title: string;
-  date: string;
-  description: string;
-  link: string;
-  linkText: string;
-}
+import type { IWordPressPost } from '../App';
 
 interface NewsProps {
-  newsData: INewsItem[];
+  newsData: IWordPressPost[];
   currentPage: number;
   onPageChange: (page: number) => void;
   direction: 'next' | 'prev' | null;
@@ -37,10 +30,7 @@ export default function News({
   const visibleNews = newsData.slice(start, start + maxItems);
   const totalPages = Math.ceil(newsData.length / maxItems);
 
-  const truncateDescription = (
-    description: string,
-    maxLength: number
-  ): string => {
+  const truncateExcerpt = (description: string, maxLength: number): string => {
     if (description.length <= maxLength) {
       return description;
     }
@@ -81,15 +71,15 @@ export default function News({
         <ul className="or-news__list" ref={listRef}>
           {visibleNews.map((news, index) => (
             <li className="or-news__item" key={`news-${index}`}>
-              <h3 className="or-news__title">{news.title}</h3>
+              <h3 className="or-news__title">{news.title.rendered}</h3>
               <time dateTime={news.date} className="or-news__date">
                 {news.date}
               </time>
               <p className="or-news__desc">
-                {truncateDescription(news.description, 96)}
+                {truncateExcerpt(news.excerpt.rendered, 96)}
               </p>
               <a href={news.link} className="or-news__link">
-                {news.linkText}
+                Mehr erfahren
               </a>
             </li>
           ))}
