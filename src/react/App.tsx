@@ -1,9 +1,11 @@
 import React from 'react';
-import { type JSX } from 'react';
+import { type JSX, useState } from 'react';
 import News from './components/News';
 import type { INewsItem } from './components/News';
 
 export default function App(): JSX.Element {
+  const [currentPage, setCurrentPage] = useState(0);
+
   const newsData: INewsItem[] = [
     {
       title: 'News-Titel',
@@ -79,5 +81,11 @@ export default function App(): JSX.Element {
     },
   ];
 
-  return <News newsData={newsData} />;
+  return (
+    <News
+      newsData={newsData}
+      currentPage={currentPage}
+      onPageChange={setCurrentPage}
+    />
+  );
 }

@@ -12,10 +12,24 @@ export interface INewsItem {
 
 interface NewsProps {
   newsData: INewsItem[];
+  currentPage: number;
+  onPageChange: (page: number) => void;
 }
 
-export default function News({ newsData }: NewsProps): JSX.Element {
+export default function News({
+  newsData,
+  currentPage,
+  onPageChange,
+}: NewsProps): JSX.Element {
   const sectionTitle: string = 'Aktuelles';
+
+  // Might be a configurable value in a real application
+  const maxItems = 3;
+
+  // Process data by state
+  const start = currentPage * maxItems;
+  const visibleNews = newsData.slice(start, start + maxItems);
+  const totalPages = Math.ceil(newsData.length / maxItems);
 
   const truncateDescription = (
     description: string,
@@ -31,7 +45,7 @@ export default function News({ newsData }: NewsProps): JSX.Element {
     <>
       <h2 className="or-section__title">{sectionTitle}</h2>
       <ul>
-        {newsData.map((news, index) => (
+        {visibleNews.map((news, index) => (
           <li className="or-news" key={`news-${index}`}>
             <h3 className="or-news__title">{news.title}</h3>
             <time dateTime={news.date} className="or-news__date">
@@ -46,7 +60,14 @@ export default function News({ newsData }: NewsProps): JSX.Element {
           </li>
         ))}
       </ul>
-      <Pager />
+      {/* Conditional rendering */}
+      {totalPages > 1 && (
+        <Pager
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={onPageChange}
+        />
+      )}
     </>
   );
 }
