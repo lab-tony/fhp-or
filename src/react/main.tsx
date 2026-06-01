@@ -2,10 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
-const root = document.getElementById('react-root');
-
-if (root) {
-  ReactDOM.createRoot(root).render(
+export function ReactApp(): void {
+  ReactDOM.createRoot(document.getElementById('react-root')!).render(
     <React.StrictMode>
       <App />
     </React.StrictMode>

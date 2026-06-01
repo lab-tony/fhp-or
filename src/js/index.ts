@@ -11,6 +11,9 @@ import '../css/foundation/grid.css';
 import '../css/foundation/theme.css';
 import '../css/foundation/style.css';
 
+/* Import React app */
+import { ReactApp } from '../react/main';
+
 /* CSS Components */
 import '../css/components/card.css';
 import '../css/components/nav.css';
@@ -26,3 +29,6 @@ import { Nav } from './Nav';
 
 /* Initialization */
 new Nav();
+
+/* Initialize React app */
+ReactApp();
