@@ -16,6 +16,7 @@ export default function Pager({
       <button
         className="or-pager__button"
         aria-label="Vorherige Seite"
+        disabled={currentPage === 0}
         onClick={() => onPageChange(currentPage - 1)}
       >
         ←
@@ -28,6 +29,7 @@ export default function Pager({
       <button
         className="or-pager__button"
         aria-label="Nächste Seite"
+        disabled={currentPage >= totalPages - 1}
         onClick={() => onPageChange(currentPage + 1)}
       >
         →

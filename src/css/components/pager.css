@@ -22,6 +22,19 @@
   transition: background-color 0.3s ease;
 }
 
+.or-pager__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.or-pager__button:not(:disabled):hover {
+  background-color: color-mix(
+    in srgb,
+    var(--color-accent),
+    var(--color-white) 30%
+  );
+}
+
 .or-pager__info {
   font-family: var(--font-regular);
   font-size: var(--font-s);
