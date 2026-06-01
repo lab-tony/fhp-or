@@ -1,0 +1,29 @@
+/* =========================
+   PAGER
+========================= */
+.or-pager {
+  padding: var(--space-m) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.or-pager__button {
+  background-color: var(--color-accent);
+  border: none;
+  color: var(--color-white);
+  font-family: var(--font-bold);
+  font-size: var(--font-m);
+  padding: 0 var(--space-xs);
+  line-height: 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.or-pager__info {
+  font-family: var(--font-regular);
+  font-size: var(--font-s);
+  color: var(--color-text);
+}

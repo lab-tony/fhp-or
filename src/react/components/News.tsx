@@ -1,5 +1,6 @@
 import React from 'react';
 import type { JSX } from 'react';
+import Pager from './Pager';
 
 export interface INewsItem {
   title: string;
@@ -45,6 +46,7 @@ export default function News({ newsData }: NewsProps): JSX.Element {
           </li>
         ))}
       </ul>
+      <Pager />
     </>
   );
 }

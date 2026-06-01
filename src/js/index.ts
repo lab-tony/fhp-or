@@ -15,6 +15,7 @@ import '../css/foundation/style.css';
 import '../css/components/card.css';
 import '../css/components/nav.css';
 import '../css/components/news.css';
+import '../css/components/pager.css';
 
 /* =========================
    JS Imports
