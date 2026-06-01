@@ -5,7 +5,9 @@ import type { INewsItem } from './components/News';
 
 export default function App(): JSX.Element {
   const [currentPage, setCurrentPage] = useState(0);
+  const [direction, setDirection] = useState<'next' | 'prev' | null>(null);
 
+  // Usually this data would likely come from an API or database
   const newsData: INewsItem[] = [
     {
       title: 'News-Titel',
@@ -86,6 +88,8 @@ export default function App(): JSX.Element {
       newsData={newsData}
       currentPage={currentPage}
       onPageChange={setCurrentPage}
+      direction={direction}
+      setDirection={setDirection}
     />
   );
 }

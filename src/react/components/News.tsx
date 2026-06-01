@@ -1,5 +1,6 @@
 import React from 'react';
 import type { JSX } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Pager from './Pager';
 
 export interface INewsItem {
@@ -14,17 +15,22 @@ interface NewsProps {
   newsData: INewsItem[];
   currentPage: number;
   onPageChange: (page: number) => void;
+  direction: 'next' | 'prev' | null;
+  setDirection: (dir: 'next' | 'prev') => void;
 }
 
 export default function News({
   newsData,
   currentPage,
   onPageChange,
+  direction,
+  setDirection,
 }: NewsProps): JSX.Element {
   const sectionTitle: string = 'Aktuelles';
 
   // Might be a configurable value in a real application
   const maxItems = 3;
+  const animationDuration = 300;
 
   // Process data by state
   const start = currentPage * maxItems;
@@ -41,33 +47,64 @@ export default function News({
     return description.slice(0, maxLength) + ' ...';
   };
 
+  const listRef = useRef<HTMLUListElement>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  // animation effect
+  useEffect(() => {
+    console.log('component mounted');
+    const newsListEl = listRef.current;
+    if (!newsListEl || !direction) return;
+
+    const className = direction === 'next' ? 'js-slide-left' : 'js-slide-right';
+
+    newsListEl.classList.add(className);
+    newsListEl.classList.add('js-animating');
+    setIsAnimating(true);
+
+    const timeout = setTimeout(() => {
+      newsListEl.classList.remove(className);
+      newsListEl.classList.remove('js-animating');
+      setIsAnimating(false);
+    }, animationDuration);
+
+    return () => {
+      console.log('component unmounted');
+      clearTimeout(timeout);
+    };
+  }, [currentPage, direction]);
+
   return (
     <>
       <h2 className="or-section__title">{sectionTitle}</h2>
-      <ul>
-        {visibleNews.map((news, index) => (
-          <li className="or-news" key={`news-${index}`}>
-            <h3 className="or-news__title">{news.title}</h3>
-            <time dateTime={news.date} className="or-news__date">
-              {news.date}
-            </time>
-            <p className="or-news__desc">
-              {truncateDescription(news.description, 96)}
-            </p>
-            <a href={news.link} className="or-news__link">
-              {news.linkText}
-            </a>
-          </li>
-        ))}
-      </ul>
-      {/* Conditional rendering */}
-      {totalPages > 1 && (
-        <Pager
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={onPageChange}
-        />
-      )}
+      <div className="or-news">
+        <ul className="or-news__list" ref={listRef}>
+          {visibleNews.map((news, index) => (
+            <li className="or-news__item" key={`news-${index}`}>
+              <h3 className="or-news__title">{news.title}</h3>
+              <time dateTime={news.date} className="or-news__date">
+                {news.date}
+              </time>
+              <p className="or-news__desc">
+                {truncateDescription(news.description, 96)}
+              </p>
+              <a href={news.link} className="or-news__link">
+                {news.linkText}
+              </a>
+            </li>
+          ))}
+        </ul>
+        {/* Conditional rendering */}
+        {totalPages > 1 && (
+          <Pager
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={onPageChange}
+            setDirection={setDirection}
+            isAnimating={isAnimating}
+          />
+        )}
+      </div>
     </>
   );
 }

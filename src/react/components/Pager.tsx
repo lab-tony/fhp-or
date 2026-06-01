@@ -4,20 +4,27 @@ interface PagerProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
+  setDirection: (dir: 'next' | 'prev') => void;
+  isAnimating: boolean;
 }
 
 export default function Pager({
   currentPage,
   totalPages,
   onPageChange,
+  setDirection,
+  isAnimating,
 }: PagerProps) {
   return (
     <nav className="or-pager" aria-label="Paginierung">
       <button
-        className="or-pager__button"
+        className={`or-pager__button ${isAnimating ? 'js-animating' : ''}`}
         aria-label="Vorherige Seite"
         disabled={currentPage === 0}
-        onClick={() => onPageChange(currentPage - 1)}
+        onClick={() => {
+          setDirection('prev');
+          onPageChange(currentPage - 1);
+        }}
       >
         ←
       </button>
@@ -27,10 +34,13 @@ export default function Pager({
       </span>
 
       <button
-        className="or-pager__button"
+        className={`or-pager__button ${isAnimating ? 'js-animating' : ''}`}
         aria-label="Nächste Seite"
         disabled={currentPage >= totalPages - 1}
-        onClick={() => onPageChange(currentPage + 1)}
+        onClick={() => {
+          setDirection('next');
+          onPageChange(currentPage + 1);
+        }}
       >
         →
       </button>
