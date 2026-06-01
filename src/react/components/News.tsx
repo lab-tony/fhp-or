@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Pager from './Pager';
 import type { IWordPressPost } from '../App';
 import DOMPurify from 'dompurify';
+import { Temporal } from 'temporal-polyfill';
 
 interface NewsProps {
   newsData: IWordPressPost[];
@@ -52,6 +53,15 @@ export default function News({
     return textarea.value;
   }
 
+  const formatDate = (dateString: string): string => {
+    const date = Temporal.PlainDateTime.from(dateString);
+    return date.toLocaleString('de-DE', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
   const listRef = useRef<HTMLUListElement>(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -88,7 +98,7 @@ export default function News({
                 {decodeHtmlEntities(stripHtml(news.title.rendered))}
               </h3>
               <time dateTime={news.date} className="or-news__date">
-                {news.date}
+                {formatDate(news.date)}
               </time>
               <p className="or-news__desc">
                 {decodeHtmlEntities(
