@@ -46,6 +46,12 @@ export default function News({
     return clean;
   };
 
+  function decodeHtmlEntities(str: string): string {
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = str;
+    return textarea.value;
+  }
+
   const listRef = useRef<HTMLUListElement>(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -79,13 +85,15 @@ export default function News({
           {visibleNews.map((news, index) => (
             <li className="or-news__item" key={`news-${index}`}>
               <h3 className="or-news__title">
-                {stripHtml(news.title.rendered)}
+                {decodeHtmlEntities(stripHtml(news.title.rendered))}
               </h3>
               <time dateTime={news.date} className="or-news__date">
                 {news.date}
               </time>
               <p className="or-news__desc">
-                {truncateExcerpt(stripHtml(news.excerpt.rendered), 96)}
+                {decodeHtmlEntities(
+                  truncateExcerpt(stripHtml(news.excerpt.rendered), 96)
+                )}
               </p>
               <a href={news.link} className="or-news__link">
                 Mehr erfahren
