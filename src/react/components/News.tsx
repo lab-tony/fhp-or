@@ -3,6 +3,7 @@ import type { JSX } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import Pager from './Pager';
 import type { IWordPressPost } from '../App';
+import DOMPurify from 'dompurify';
 
 interface NewsProps {
   newsData: IWordPressPost[];
@@ -37,12 +38,19 @@ export default function News({
     return description.slice(0, maxLength) + ' ...';
   };
 
+  const stripHtml = (html: string): string => {
+    const clean = DOMPurify.sanitize(html, {
+      ALLOWED_TAGS: [],
+    });
+
+    return clean;
+  };
+
   const listRef = useRef<HTMLUListElement>(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
   // animation effect
   useEffect(() => {
-    console.log('component mounted');
     const newsListEl = listRef.current;
     if (!newsListEl || !direction) return;
 
@@ -59,7 +67,6 @@ export default function News({
     }, animationDuration);
 
     return () => {
-      console.log('component unmounted');
       clearTimeout(timeout);
     };
   }, [currentPage, direction]);
@@ -71,12 +78,14 @@ export default function News({
         <ul className="or-news__list" ref={listRef}>
           {visibleNews.map((news, index) => (
             <li className="or-news__item" key={`news-${index}`}>
-              <h3 className="or-news__title">{news.title.rendered}</h3>
+              <h3 className="or-news__title">
+                {stripHtml(news.title.rendered)}
+              </h3>
               <time dateTime={news.date} className="or-news__date">
                 {news.date}
               </time>
               <p className="or-news__desc">
-                {truncateExcerpt(news.excerpt.rendered, 96)}
+                {truncateExcerpt(stripHtml(news.excerpt.rendered), 96)}
               </p>
               <a href={news.link} className="or-news__link">
                 Mehr erfahren
