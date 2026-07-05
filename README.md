@@ -48,7 +48,7 @@ Reaktives JavaScript, Render-Verhalten, Properties und States.
 
 ## Wordpress API
 
-In der Datei _src/react/App.tsx_ wird die URL https://openrewi.org/wp-json/wp/v2/posts?_fields=title,date,excerpt,link aufgerufen, welche Titel, Datum, Beschreibungstext und Link zur Seite der Posts als JSON zurückgibt und in den React-Komponenten verwendet werden.
+In der Datei _src/react/App.tsx_ wird die URL https://openrewi.org/wp-json/wp/v2/posts?_fields=title,date,excerpt,link aufgerufen, welche Titel, Datum, Beschreibungstext und Link zur Seite der Posts als JSON zurückgibt und in den React-Komponenten verwendet.
 
 Nach gleichem Prinzip kann jede Wordpress-Seite ihre redaktionellen Daten zur Verwendung bereitstellen.
 
